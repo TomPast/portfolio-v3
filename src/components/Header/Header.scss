@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.social-link {
+  svg * {
+    fill: rgba(255, 255, 255, 0.5);
+    transition: all 0.12s ease-in-out;
+  }
+}
+
+.social-link:hover {
+  svg * {
+    fill: rgba(255, 255, 255, 1);
+    transition: all 0.12s ease-in-out;
+  }
+}

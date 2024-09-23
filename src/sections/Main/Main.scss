@@ -1,0 +1,9 @@
+.main {
+  background-image: url('/src/assets/img/main-bg.png');
+  background-size: cover;
+  background-position: top center;
+
+  height: 100vh;
+  padding: var(--margin);
+  padding-top: 40px;
+}
