@@ -9,7 +9,7 @@ import { ReactComponent as ResumeLogo } from '../../assets/img/cv-logo.svg'
 function Header() {
   return (
     <div className="header">
-      <Logo width="48" height="auto" />
+      <Logo width="48" height="48" />
 
       <div className="socials">
         <a
@@ -18,7 +18,7 @@ function Header() {
           rel="noreferrer"
           className="social-link"
         >
-          <GithubLogo width="32" height="auto" />
+          <GithubLogo width="32" />
         </a>
         <a
           href={process.env.VITE_LINKEDIN_URL}
@@ -26,7 +26,7 @@ function Header() {
           rel="noreferrer"
           className="social-link"
         >
-          <LinkedInLogo width="32" height="auto" />
+          <LinkedInLogo width="32" />
         </a>
 
         <a
@@ -35,7 +35,7 @@ function Header() {
           rel="noreferrer"
           className="social-link"
         >
-          <ResumeLogo width="28" height="auto" />
+          <ResumeLogo width="28" />
         </a>
       </div>
     </div>

@@ -1,8 +1,4 @@
 .main-title {
-  margin-top: calc(50vh - 140px);
-  text-align: center;
-  transform: translateY(-50%);
-
   h1 {
     font-size: 6rem;
     font-weight: 800;
@@ -12,6 +8,7 @@
   .gradient-title {
     background: linear-gradient(0deg, #8e90cb 0%, #ffffff 75%, #ffffff 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }

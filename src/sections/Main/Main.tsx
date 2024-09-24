@@ -7,19 +7,14 @@ function Main() {
   return (
     <div className="main">
       <Header />
-      <MainTitle />
-      <div>
-        <p
-          style={{
-            textAlign: 'center',
-            fontSize: '2rem',
-            color: 'white',
-            fontWeight: 300,
-          }}
-        >
-          I develop accessible, responsive, interactive, and animated websites
-          with a strong focus on performance.
-        </p>
+      <div className="hero">
+        <MainTitle />
+        <div className="description">
+          <p>
+            Let me develop your project, focusing on responsiveness,
+            performance, security, and a seamless user experience.
+          </p>
+        </div>
       </div>
     </div>
   )
