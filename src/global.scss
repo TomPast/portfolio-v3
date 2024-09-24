@@ -1,16 +1,37 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-:root {
-  --main-bg-color: #05071c;
-  --primary-color: #914ff5;
-  --main-font: 'Montserrat', sans-serif;
+$main-bg-color: #05071c;
+$primary-color: #914ff5;
+$green: #05fb4f;
+$main-font: 'Montserrat', sans-serif;
 
-  --margin: 0 150px;
+$margin: 0 150px;
+
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1366px;
+
+:root {
+  --main-bg-color: #{$main-bg-color};
+  --primary-color: #{$primary-color};
+  --green: #{$green};
+  --main-font: #{$main-font};
+
+  --margin: #{$margin};
+
+  --breakpoint-sm: #{$breakpoint-sm};
+  --breakpoint-md: #{$breakpoint-md};
+  --breakpoint-lg: #{$breakpoint-lg};
+  --breakpoint-xl: #{$breakpoint-xl};
 }
+
+$green: #05fb4f;
 
 body {
   margin: 0;
   font-family: var(--main-font), sans-serif;
+  color: white;
 }
 
 h1 {
