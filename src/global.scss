@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 $main-bg-color: #05071c;
+$main-up-bg-color: #15162c;
 $primary-color: #914ff5;
 $green: #05fb4f;
 $main-font: 'Montserrat', sans-serif;
 
-$margin: 0 150px;
+$margin: 150px;
+$margin-sm: 30px;
+$margin-lg: 50px;
+$margin-xl: 100px;
 
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -14,11 +18,15 @@ $breakpoint-xl: 1366px;
 
 :root {
   --main-bg-color: #{$main-bg-color};
+  --main-up-bg-color: #{$main-up-bg-color};
   --primary-color: #{$primary-color};
   --green: #{$green};
   --main-font: #{$main-font};
 
   --margin: #{$margin};
+  --margin-sm: #{$margin-sm};
+  --margin-lg: #{$margin-lg};
+  --margin-xl: #{$margin-xl};
 
   --breakpoint-sm: #{$breakpoint-sm};
   --breakpoint-md: #{$breakpoint-md};
@@ -27,6 +35,16 @@ $breakpoint-xl: 1366px;
 }
 
 $green: #05fb4f;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 
 body {
   margin: 0;

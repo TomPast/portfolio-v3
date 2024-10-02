@@ -1,0 +1,13 @@
+@import '../../global.scss';
+
+.part-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+
+  .gradient-title {
+    background: linear-gradient(0deg, #8e90cb 0%, #ffffff 75%, #ffffff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
