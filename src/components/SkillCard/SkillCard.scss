@@ -1,0 +1,38 @@
+@import '../../global.scss';
+
+.skill-card {
+  border: 1px solid rgba(#ffffff, 0.25);
+  border-radius: 12px;
+  padding: 25px;
+
+  background-color: rgba(#fffdfd, 0.05);
+
+  .logo-container {
+    display: flex;
+    gap: 5px;
+
+    .logo-img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  .title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 20px 0;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.4;
+    font-weight: 200;
+    margin: 20px 0 30px;
+  }
+
+  .tech-list {
+    max-width: 75%;
+    font-weight: 200;
+    opacity: 0.65;
+  }
+}

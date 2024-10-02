@@ -4,7 +4,8 @@ import Main from './sections/Main/Main'
 import { ReactLenis } from '@studio-freight/react-lenis'
 import gsap from 'gsap'
 import MotionPathPlugin from 'gsap/MotionPathPlugin'
-gsap.registerPlugin(MotionPathPlugin)
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(MotionPathPlugin, ScrollTrigger)
 
 import { useGSAP } from '@gsap/react'
 import Skillset from './sections/Skillset/Skillset'

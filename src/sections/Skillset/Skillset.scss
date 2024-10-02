@@ -11,9 +11,6 @@
   }
 
   .content {
-    height: 100vh;
-    background: var(--main-up-bg-color);
-
     padding: 20px var(--margin) 0;
 
     @media screen and (max-width: $breakpoint-xl) {
@@ -26,6 +23,69 @@
 
     @media screen and (max-width: $breakpoint-sm) {
       padding: 40px var(--margin-sm) 0;
+    }
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    .skills-row-1 {
+      display: flex;
+      justify-content: space-between;
+
+      .skill-card-frontend {
+        flex: 0.6;
+      }
+
+      .skill-card-webui {
+        flex: 0.3;
+      }
+    }
+
+    .skills-row-2 {
+      display: flex;
+      justify-content: space-between;
+
+      .skill-card-backend {
+        flex: 0.4;
+      }
+
+      .skill-card-environment {
+        flex: 0.5;
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-lg) {
+      gap: 40px;
+
+      .skills-row-1 {
+        .skill-card-frontend {
+          flex: 0.55;
+        }
+
+        .skill-card-webui {
+          flex: 0.4;
+        }
+      }
+
+      .skills-row-2 {
+        .skill-card-backend {
+          flex: 0.47;
+        }
+
+        .skill-card-environment {
+          flex: 0.47;
+        }
+      }
+    }
+
+    @media screen and (max-width: $breakpoint-md) {
+      > div {
+        flex-direction: column;
+        gap: 40px;
+      }
     }
   }
 }

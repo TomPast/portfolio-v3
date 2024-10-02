@@ -1,10 +1,10 @@
 import React from 'react'
 import './Header.scss'
 
-import { ReactComponent as Logo } from '../../assets/img/tp-logo.svg'
-import { ReactComponent as GithubLogo } from '../../assets/img/github-logo.svg'
-import { ReactComponent as LinkedInLogo } from '../../assets/img/linkedin-logo.svg'
-import { ReactComponent as ResumeLogo } from '../../assets/img/cv-logo.svg'
+import { ReactComponent as Logo } from '../../assets/logo/tp-logo.svg'
+import { ReactComponent as GithubLogo } from '../../assets/logo/github-logo.svg'
+import { ReactComponent as LinkedInLogo } from '../../assets/logo/linkedin-logo.svg'
+import { ReactComponent as ResumeLogo } from '../../assets/logo/cv-logo.svg'
 
 function Header() {
   return (
