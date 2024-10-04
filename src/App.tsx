@@ -9,6 +9,7 @@ gsap.registerPlugin(MotionPathPlugin, ScrollTrigger)
 
 import { useGSAP } from '@gsap/react'
 import Skillset from './sections/Skillset/Skillset'
+import ScrollingText from './sections/ScrollingText/ScrollingText'
 
 gsap.registerPlugin(useGSAP)
 
@@ -17,7 +18,10 @@ function App() {
     <ReactLenis root>
       <div className="body">
         <Main />
-        <Skillset />
+        <div className="upper-body">
+          <Skillset />
+          <ScrollingText />
+        </div>
       </div>
     </ReactLenis>
   )

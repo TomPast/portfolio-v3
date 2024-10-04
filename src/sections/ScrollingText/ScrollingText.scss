@@ -1,0 +1,36 @@
+@import '../../global.scss';
+
+.scrolling-text {
+  padding: 25vh var(--margin);
+
+  p {
+    margin: 0;
+    font-family: var(--secondary-font);
+    margin-left: 20px;
+    border-left: 2px solid rgba(white, 0.6);
+    max-width: 1200px;
+    color: rgba(white, 0.6);
+    padding: 20px 0 20px 50px;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 25vh var(--margin-xl);
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 25vh var(--margin-lg);
+    p {
+      margin-left: 0;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 25vh var(--margin-sm);
+    p {
+      font-size: 1.3rem;
+    }
+  }
+}
