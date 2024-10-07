@@ -37,7 +37,7 @@ function Skillset() {
         ease: 'none',
         duration: 40,
         attr: {
-          startOffset: '135%', //140
+          startOffset: '135%',
         },
       },
       0

@@ -1,0 +1,91 @@
+.experience-item {
+  position: relative;
+  display: flex;
+  gap: 45px;
+  height: 100%;
+  padding-bottom: 20px;
+  align-items: stretch;
+
+  font-family: var(--secondary-font);
+
+  .left-content {
+    width: min-content;
+    position: relative;
+
+    .logo-img {
+      width: 70px;
+      height: 70px;
+    }
+
+    .vertical-line {
+      position: absolute;
+      left: 50%;
+      top: calc(70px + 20px);
+      bottom: 0;
+      height: calc(100% - 70px);
+      width: 1px;
+      background-color: white;
+
+      &.fade-out {
+        background: linear-gradient(to bottom, white 0%, transparent 100%);
+      }
+    }
+  }
+
+  .right-content {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      margin: 0;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .role {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    .location {
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+    .dates {
+      font-size: 16px;
+      opacity: 0.65;
+      font-weight: 300;
+    }
+
+    .description-list {
+      padding-left: 0;
+      line-height: 1.4;
+      font-size: 16px;
+      margin: 30px 0;
+    }
+
+    .description-item {
+      list-style-type: none;
+      padding-left: 0;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 16px;
+    }
+
+    .tech-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+
+      .tech-badge {
+        border: 1px solid white;
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
