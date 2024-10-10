@@ -13,6 +13,7 @@ import ScrollingText from './sections/ScrollingText/ScrollingText'
 import Experiences from './sections/Experiences/Experiences'
 import Projects from './sections/Projects/Projects'
 import bgImg from './assets/img/secondary-bg.jpg'
+import AboutMe from './sections/AboutMe/AboutMe'
 
 gsap.registerPlugin(useGSAP)
 
@@ -33,6 +34,7 @@ function App() {
           <Experiences />
         </div>
         <Projects />
+        <AboutMe />
       </div>
     </ReactLenis>
   )

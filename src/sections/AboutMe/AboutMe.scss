@@ -1,0 +1,67 @@
+@import '../../global.scss';
+
+.about-me {
+  position: relative;
+  margin-top: 100px;
+  padding: 20px var(--margin) 40px;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 40px var(--margin-xl) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 40px var(--margin-lg) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 40px var(--margin-sm) 0;
+  }
+
+  .title {
+    position: relative;
+
+    .me {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 55px;
+      height: 55px;
+      transform: translateY(5%);
+    }
+  }
+
+  .description {
+    max-width: 600px;
+    line-height: 1.5;
+    font-weight: 300;
+
+    .bold {
+      font-weight: 600;
+    }
+  }
+
+  .draw-swiper {
+    margin-top: 30px;
+  }
+
+  .check-more {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    font-family: var(--secondary-font);
+    font-weight: 200;
+
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+
+    cursor: pointer;
+
+    .instagram-icon {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
