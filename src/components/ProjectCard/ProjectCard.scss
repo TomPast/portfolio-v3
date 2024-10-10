@@ -1,0 +1,28 @@
+.project-card {
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  border-radius: 10px;
+  overflow: hidden;
+
+  background-color: #161724;
+
+  .project-info {
+    padding: 20px;
+  }
+
+  .project-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 24px;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+}

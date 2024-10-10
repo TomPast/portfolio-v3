@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react'
 import './Skillset.scss'
-import { ReactComponent as Logo } from '../../assets/img/curved-text.svg'
+import { ReactComponent as CurvedText } from '../../assets/img/curved-text.svg'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import PartTitle from '../../components/PartTitle/PartTitle'
@@ -87,7 +87,7 @@ function Skillset() {
   return (
     <div className="skillset">
       <div className="animated-text">
-        <Logo />
+        <CurvedText />
       </div>
       <div className="content">
         <PartTitle>Skillset</PartTitle>

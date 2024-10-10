@@ -1,0 +1,101 @@
+@import '../../global.scss';
+
+.projects {
+  position: relative;
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding: 20px var(--margin) 0;
+
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    &.right {
+      margin-top: 60px;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 40px var(--margin-xl) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 40px var(--margin-lg) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 40px var(--margin-sm) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-md) {
+    flex-direction: column;
+
+    .column.right {
+      margin-top: 0;
+    }
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 200;
+    font-family: var(--secondary-font);
+    color: var(--gray);
+    margin-bottom: 20px;
+  }
+
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: white;
+    font-weight: 300;
+    padding: 0;
+    font-family: var(--secondary-font);
+    transition: all 0.3s ease;
+
+    position: relative;
+    border-bottom: none; // Supprimez la bordure existante
+    padding-bottom: 2px; // Ajoutez un peu d'espace pour la nouvelle bordure
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: white;
+      transform: scaleX(1);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::after {
+      transform: scaleX(0);
+    }
+  }
+
+  .button .arrow {
+    transition: all 0.3s ease;
+    transform-origin: left;
+    transform: scaleX(1.3);
+  }
+
+  .button:hover {
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .button:hover .arrow {
+    transition: transform 0.3s ease;
+    transform: scaleX(1.5);
+    text-decoration: none;
+  }
+}
