@@ -15,7 +15,7 @@ import Projects from './sections/Projects/Projects'
 import bgImg from './assets/img/secondary-bg.jpg'
 import AboutMe from './sections/AboutMe/AboutMe'
 import Contact from './sections/Contact/Contact'
-
+import Footer from './sections/Footer/Footer'
 gsap.registerPlugin(useGSAP)
 
 function App() {
@@ -25,7 +25,8 @@ function App() {
         className="body"
         style={{
           backgroundImage: `url(${bgImg})`,
-          backgroundSize: 'cover',
+          backgroundSize: '100% auto',
+          backgroundRepeat: 'repeat-y',
         }}
       >
         <Main />
@@ -37,6 +38,7 @@ function App() {
         <Projects />
         <AboutMe />
         <Contact />
+        <Footer />
       </div>
     </ReactLenis>
   )
