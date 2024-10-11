@@ -18,14 +18,11 @@ import Draw10 from '../../assets/img/draw-10.jpg'
 
 import { Autoplay, Navigation } from 'swiper/modules'
 
-import type { Swiper as SwiperType } from 'swiper/types'
 function IgSwiper({ className }: { className: string }) {
   return (
     <Swiper
       spaceBetween={20}
       slidesPerView={2}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper: SwiperType) => console.log(swiper)}
       loop={true}
       autoplay={{
         delay: 2500,

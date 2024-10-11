@@ -14,6 +14,7 @@ import Experiences from './sections/Experiences/Experiences'
 import Projects from './sections/Projects/Projects'
 import bgImg from './assets/img/secondary-bg.jpg'
 import AboutMe from './sections/AboutMe/AboutMe'
+import Contact from './sections/Contact/Contact'
 
 gsap.registerPlugin(useGSAP)
 
@@ -35,6 +36,7 @@ function App() {
         </div>
         <Projects />
         <AboutMe />
+        <Contact />
       </div>
     </ReactLenis>
   )
