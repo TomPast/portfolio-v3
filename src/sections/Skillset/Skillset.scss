@@ -1,15 +1,6 @@
 @import '../../global.scss';
 
 .skillset {
-  overflow: hidden;
-
-  .animated-text {
-    width: 100%;
-    position: absolute;
-    bottom: -5px;
-    overflow: hidden;
-  }
-
   .content {
     padding: 20px var(--margin) 0;
 

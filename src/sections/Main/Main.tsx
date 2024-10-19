@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Main.scss'
 import Header from '../../components/Header/Header'
 import MainTitle from '../../components/MainTitle/MainTitle'
@@ -8,6 +8,7 @@ import gsap from 'gsap'
 
 function Main() {
   const container = React.useRef<HTMLDivElement>(null)
+  const heroRef = React.useRef<HTMLDivElement>(null)
 
   useGSAP(
     () => {
@@ -42,10 +43,31 @@ function Main() {
     { scope: container }
   )
 
+  useEffect(() => {
+    const handleParallax = () => {
+      if (heroRef.current) {
+        const scrollPosition = window.scrollY
+        const parallaxEffect = scrollPosition * 1
+        gsap.to(heroRef.current.children, {
+          y: parallaxEffect,
+          opacity: 1 - scrollPosition / 1000,
+          duration: 0.5,
+          ease: 'power1.out',
+        })
+      }
+    }
+
+    window.addEventListener('scroll', handleParallax)
+
+    return () => {
+      window.removeEventListener('scroll', handleParallax)
+    }
+  }, [])
+
   return (
     <div className="main" ref={container}>
       <Header />
-      <div className="hero">
+      <div className="hero" ref={heroRef}>
         <MainTitle />
         <div className="description">
           <p>

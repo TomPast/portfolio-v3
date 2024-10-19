@@ -16,6 +16,7 @@ import bgImg from './assets/img/secondary-bg.jpg'
 import AboutMe from './sections/AboutMe/AboutMe'
 import Contact from './sections/Contact/Contact'
 import Footer from './sections/Footer/Footer'
+import StartCurvedText from './sections/StartCurvedText/StartCurvedText'
 gsap.registerPlugin(useGSAP)
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         }}
       >
         <Main />
+        <StartCurvedText />
         <div className="upper-body">
           <Skillset />
           <ScrollingText />
