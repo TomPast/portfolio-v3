@@ -31,13 +31,6 @@ function Main() {
           duration: 0.3,
           ease: 'power2.inOut',
           delay: 0.1,
-        }),
-        gsap.from('.badge', {
-          y: '-=50',
-          opacity: 0,
-          ease: 'power2.inOut',
-          duration: 0.3,
-          delay: 0.5,
         })
     },
     { scope: container }

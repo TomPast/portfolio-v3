@@ -23,35 +23,39 @@ import GitlabLogo from '../../assets/logo/gitlab.svg'
 
 function Skillset() {
   useGSAP(() => {
-    gsap.from('.content', {
+    gsap.from('.skillset-title', {
+      scrollTrigger: {
+        trigger: '.skill-card',
+      },
       y: '+=100',
       opacity: 0,
       ease: 'power2.inOut',
+      duration: 0.3,
+    })
+
+    gsap.from('.skill-card', {
+      scrollTrigger: {
+        trigger: '.skill-card',
+        start: 'top 100%',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: '+=100',
       duration: 0.5,
-      delay: 0.5,
-    }),
-      gsap.from('.skill-card', {
-        scrollTrigger: {
-          trigger: '.skill-card',
-        },
-        y: '+=100',
-        opacity: 0,
-        ease: 'power2.inOut',
-        duration: 0.5,
-        stagger: 0.1,
-      })
+      stagger: 0.2,
+    })
   })
 
   return (
     <div>
       <div className="skillset">
         <div className="content">
-          <PartTitle>Skillset</PartTitle>
+          <PartTitle className="skillset-title">Skillset</PartTitle>
 
           <div className="skills">
             <div className="skills-row-1">
               <SkillCard
-                className="skill-card-frontend"
+                className="skill-card-frontend skill-card-row-1"
                 images={[ReactLogo, VueLogo, AngularLogo, AstroLogo]}
                 title="Frontend"
                 description="I create accessible, responsive websites with a focus on clean design, smooth interactions, and attention to detail."
@@ -68,7 +72,7 @@ function Skillset() {
               />
 
               <SkillCard
-                className="skill-card-webui"
+                className="skill-card-webui skill-card-row-1"
                 images={[FigmaLogo, BlenderLogo]}
                 title="Web & UI Design"
                 description="I'm not a designer, but I like to design and develop beautiful and user-friendly interfaces."
@@ -78,7 +82,7 @@ function Skillset() {
 
             <div className="skills-row-2">
               <SkillCard
-                className="skill-card-backend"
+                className="skill-card-backend skill-card-row-2"
                 images={[
                   NodeLogo,
                   NestLogo,
@@ -100,7 +104,7 @@ function Skillset() {
               />
 
               <SkillCard
-                className="skill-card-environment   "
+                className="skill-card-environment skill-card-row-2"
                 images={[DockerLogo, VercelLogo, GithubLogo, GitlabLogo]}
                 title="Environment"
                 description="I use tools that optimize development and deployment, ensuring efficient workflows and reliable infrastructure."
