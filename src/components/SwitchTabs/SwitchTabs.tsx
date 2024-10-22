@@ -5,9 +5,10 @@ import './SwitchTabs.scss'
 interface SwitchTabsProps {
   tabs: { id: string; label: string }[]
   onTabChange: (tabId: string) => void
+  className?: string
 }
 
-function SwitchTabs({ tabs, onTabChange }: SwitchTabsProps) {
+function SwitchTabs({ tabs, onTabChange, className }: SwitchTabsProps) {
   const [activeTab, setActiveTab] = useState(tabs[0].id)
   const backgroundRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -34,7 +35,7 @@ function SwitchTabs({ tabs, onTabChange }: SwitchTabsProps) {
   }, [activeTab])
 
   return (
-    <div className="switch-container" ref={containerRef}>
+    <div className={`switch-container ${className}`} ref={containerRef}>
       <div className="switch-background" ref={backgroundRef}></div>
       {tabs.map((tab) => (
         <button

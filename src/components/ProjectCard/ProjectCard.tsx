@@ -9,33 +9,39 @@ interface ProjectCardProps {
   demoLink: string
 }
 
-function ProjectCard({
-  image,
-  title,
-  description,
-  githubLink,
-  demoLink,
-}: ProjectCardProps) {
-  return (
-    <div className="project-card">
-      <img src={image} alt="project-preview" />
-      <div className="project-info">
-        <div className="project-info-header">
-          <h3>{title}</h3>
-          <div className="project-info-header-links">
-            <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>{' '}
-            <a href={demoLink} target="_blank" rel="noopener noreferrer">
-              Demo
-            </a>
+const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
+  (props, ref) => {
+    return (
+      <div className="project-card" ref={ref}>
+        <img src={props.image} alt="project-preview" />
+        <div className="project-info">
+          <div className="project-info-header">
+            <h3>{props.title}</h3>
+            <div className="project-info-header-links">
+              <a
+                href={props.githubLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub
+              </a>{' '}
+              <a
+                href={props.demoLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Demo
+              </a>
+            </div>
           </div>
-        </div>
 
-        <p>{description}</p>
+          <p>{props.description}</p>
+        </div>
       </div>
-    </div>
-  )
-}
+    )
+  }
+)
+
+ProjectCard.displayName = 'ProjectCard'
 
 export default ProjectCard

@@ -24,16 +24,14 @@ function SkillCard({
 
   useEffect(() => {
     if (cardRef.current && techListRef.current && imagesRef.current) {
-      // Définir l'opacité initiale à 0 pour tous les tech-items et images
       gsap.set([techListRef.current.children, imagesRef.current.children], {
         opacity: 0,
       })
 
       ScrollTrigger.create({
         trigger: cardRef.current,
-        start: 'top 100%',
+        start: 'top 60%',
         onEnter: () => {
-          // Animation des images
           gsap.to(Array.from(imagesRef.current?.children || []), {
             opacity: 1,
             duration: 0.3,
@@ -41,7 +39,6 @@ function SkillCard({
             ease: 'power2.out',
           })
 
-          // Animation des tech-items
           gsap.to(Array.from(techListRef.current?.children || []), {
             opacity: 1,
             duration: 0.3,

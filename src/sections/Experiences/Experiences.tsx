@@ -7,16 +7,42 @@ import SyaLogo from '../../assets/logo/sya-digital.svg'
 import SpikeelabsLogo from '../../assets/logo/spikeelabs.svg'
 import EnsimLogo from '../../assets/logo/ensim.svg'
 import { ReactComponent as CurvedEnd } from '../../assets/img/curved-end.svg'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 
 function Experiences() {
   const [activeTab, setActiveTab] = useState('experiences')
+  useGSAP(() => {
+    gsap.from('.experiences-title', {
+      scrollTrigger: {
+        trigger: '.experiences',
+        start: 'top 70%',
+      },
+      y: '-=50',
+      opacity: 0,
+      ease: 'power2.inOut',
+      duration: 0.3,
+    }),
+      gsap.from('.experiences-tabs', {
+        scrollTrigger: {
+          trigger: '.experiences',
+          start: 'top 70%',
+        },
+        y: '-=50',
+        delay: 0.3,
+        opacity: 0,
+        ease: 'power2.inOut',
+        duration: 0.3,
+      })
+  })
 
   return (
     <section className="experiences">
       <div className="content">
-        <PartTitle>Experience</PartTitle>
+        <PartTitle className="experiences-title">Experience</PartTitle>
 
         <SwitchTabs
+          className="experiences-tabs"
           tabs={[
             { id: 'experiences', label: 'Experience' },
             { id: 'education', label: 'Education' },
@@ -51,6 +77,7 @@ function Experiences() {
                 'MongoDB',
                 'Astro',
               ]}
+              index={0}
             />
 
             <ExperienceItem
@@ -79,6 +106,7 @@ function Experiences() {
                 'MSSQL',
               ]}
               isLastItem
+              index={1}
             />
           </div>
         )}
@@ -93,6 +121,7 @@ function Experiences() {
               startDate={new Date('2016-09-01')}
               endDate={new Date('2021-09-01')}
               simpleItem
+              index={0}
             />
           </div>
         )}

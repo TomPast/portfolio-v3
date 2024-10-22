@@ -25,22 +25,36 @@ function Skillset() {
   useGSAP(() => {
     gsap.from('.skillset-title', {
       scrollTrigger: {
-        trigger: '.skill-card',
+        trigger: '.skillset-title',
+        start: 'top 90%',
+        toggleActions: 'play none none reverse',
       },
-      y: '+=100',
+      y: '-=30',
       opacity: 0,
       ease: 'power2.inOut',
       duration: 0.3,
     })
 
-    gsap.from('.skill-card', {
+    gsap.from('.skill-card-row-1', {
       scrollTrigger: {
-        trigger: '.skill-card',
-        start: 'top 100%',
+        trigger: '.skills-row-1',
+        start: 'top 80%',
         toggleActions: 'play none none reverse',
       },
       opacity: 0,
-      y: '+=100',
+      y: '-=100',
+      duration: 0.5,
+      stagger: 0.2,
+    })
+
+    gsap.from('.skill-card-row-2', {
+      scrollTrigger: {
+        trigger: '.skills-row-2',
+        start: 'top 80%',
+        toggleActions: 'play none none reverse',
+      },
+      opacity: 0,
+      y: '-=100',
       duration: 0.5,
       stagger: 0.2,
     })

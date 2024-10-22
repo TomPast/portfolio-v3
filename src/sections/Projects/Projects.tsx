@@ -1,14 +1,60 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './Projects.scss'
 import PartTitle from '../../components/PartTitle/PartTitle'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
 
+gsap.registerPlugin(ScrollTrigger)
+
 function Projects() {
+  const sectionRef = useRef(null)
+  const textRef = useRef(null)
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+
+  useEffect(() => {
+    const section = sectionRef.current
+    const text = textRef.current
+    const cards = cardRefs.current
+
+    gsap.fromTo(
+      text,
+      { opacity: 0, y: -50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.3,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 80%',
+        },
+      }
+    )
+
+    cards.forEach((card, index) => {
+      if (card) {
+        gsap.fromTo(
+          card,
+          { opacity: 0, y: -50 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            scrollTrigger: {
+              trigger: section,
+              start: `top ${70 - index * 20}%`,
+            },
+          }
+        )
+      }
+    })
+  }, [])
+
   return (
-    <section className="projects">
+    <section className="projects" ref={sectionRef}>
       <div className="column">
-        <div>
+        <div ref={textRef}>
           <PartTitle>Projects</PartTitle>
           <p className="description">
             Here are some of the projects I have worked on.
@@ -19,6 +65,7 @@ function Projects() {
         </div>
 
         <ProjectCard
+          ref={(el) => (cardRefs.current[1] = el)}
           image={'https://placehold.co/600x300'}
           title="React Component Library"
           description="A library of reusable React components"
@@ -28,6 +75,7 @@ function Projects() {
       </div>
       <div className="column right">
         <ProjectCard
+          ref={(el) => (cardRefs.current[0] = el)}
           image={'https://placehold.co/600x300'}
           title="React Component Library"
           description="A library of reusable React components"
@@ -35,6 +83,7 @@ function Projects() {
           demoLink="https://your-repo.github.io/react-component-library"
         />
         <ProjectCard
+          ref={(el) => (cardRefs.current[2] = el)}
           image={'https://placehold.co/600x300'}
           title="React Component Library"
           description="A library of reusable React components"
