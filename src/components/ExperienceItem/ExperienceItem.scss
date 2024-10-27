@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .experience-item {
   position: relative;
   display: flex;
@@ -87,6 +89,15 @@
         font-size: 12px;
         font-weight: 500;
       }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    flex-direction: column;
+    gap: 20px;
+
+    .vertical-line {
+      display: none;
     }
   }
 }

@@ -29,8 +29,10 @@
 
   @media screen and (max-width: $breakpoint-sm) {
     padding: 25vh var(--margin-sm);
+
     p {
-      font-size: 1.3rem;
+      font-size: 1.8rem;
+      padding: 20px 0 20px 20px;
     }
   }
 }

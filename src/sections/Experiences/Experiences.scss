@@ -7,15 +7,15 @@
     padding: 20px var(--margin) 40px;
 
     @media screen and (max-width: $breakpoint-xl) {
-      padding: 40px var(--margin-xl) 0;
+      padding: 40px var(--margin-xl) 40px;
     }
 
     @media screen and (max-width: $breakpoint-lg) {
-      padding: 40px var(--margin-lg) 0;
+      padding: 40px var(--margin-lg) 40px;
     }
 
     @media screen and (max-width: $breakpoint-sm) {
-      padding: 40px var(--margin-sm) 0;
+      padding: 40px var(--margin-sm) 40px;
     }
   }
 

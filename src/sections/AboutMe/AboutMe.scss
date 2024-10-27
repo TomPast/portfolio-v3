@@ -5,18 +5,6 @@
   margin-top: 100px;
   padding: 20px var(--margin) 40px;
 
-  @media screen and (max-width: $breakpoint-xl) {
-    padding: 40px var(--margin-xl) 0;
-  }
-
-  @media screen and (max-width: $breakpoint-lg) {
-    padding: 40px var(--margin-lg) 0;
-  }
-
-  @media screen and (max-width: $breakpoint-sm) {
-    padding: 40px var(--margin-sm) 0;
-  }
-
   .title {
     position: relative;
     width: min-content;
@@ -29,6 +17,24 @@
       height: 55px;
       transform: translateY(5%);
     }
+  }
+
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 40px var(--margin-xl) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 40px var(--margin-lg) 0;
+    .title {
+      .me {
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 40px var(--margin-sm) 0;
   }
 
   .description {

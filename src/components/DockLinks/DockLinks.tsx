@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import './DockLinks.scss'
 
 // Définition de l'interface pour les props
@@ -15,6 +15,23 @@ interface DockLinksProps {
 
 function DockLinks({ links }: DockLinksProps) {
   const dockRef = useRef<HTMLDivElement>(null)
+  // Ajout d'un état pour détecter si on est sur mobile
+  const [isMobile, setIsMobile] = useState(false)
+
+  React.useEffect(() => {
+    // Fonction pour vérifier si on est sur mobile
+    const checkIfMobile = () => {
+      setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+    }
+
+    // Vérification initiale
+    checkIfMobile()
+
+    // Écouter les changements de taille d'écran
+    window.addEventListener('resize', checkIfMobile)
+
+    return () => window.removeEventListener('resize', checkIfMobile)
+  }, [])
 
   const maxAdditionalSize = 5
 
@@ -29,7 +46,8 @@ function DockLinks({ links }: DockLinksProps) {
   }
 
   const handleAppHover = (ev: React.MouseEvent<HTMLLIElement>) => {
-    if (!dockRef.current) return
+    // Si on est sur mobile, on ne fait rien
+    if (isMobile || !dockRef.current) return
 
     const mousePosition = ev.clientX
     const iconPositionLeft = ev.currentTarget.getBoundingClientRect().left
@@ -55,7 +73,7 @@ function DockLinks({ links }: DockLinksProps) {
 
   return (
     <div>
-      <nav ref={dockRef} className="dock">
+      <nav ref={dockRef} className={`dock ${isMobile ? 'mobile' : ''}`}>
         <ul>
           {links.map((link, index) => (
             <li key={index} className="app" onMouseMove={handleAppHover}>

@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .contact {
   text-align: center;
   width: 100%;
@@ -9,6 +11,18 @@
   z-index: 10;
 
   margin-top: 200px;
+
+  @media screen and (max-width: $breakpoint-xl) {
+    padding: 40px var(--margin-xl) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-lg) {
+    padding: 40px var(--margin-lg) 0;
+  }
+
+  @media screen and (max-width: $breakpoint-sm) {
+    padding: 40px var(--margin-sm) 0;
+  }
 
   .title {
     margin-bottom: 0;

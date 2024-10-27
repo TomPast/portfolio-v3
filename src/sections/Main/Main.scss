@@ -4,9 +4,8 @@
   background-image: url('/src/assets/img/main-bg.png');
   background-size: cover;
   background-position: top center;
-  background-attachment: fixed;
+  height: 100svh;
 
-  height: 100vh;
   padding: 40px var(--margin) 0;
   position: relative;
 

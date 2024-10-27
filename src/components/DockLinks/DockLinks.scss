@@ -88,3 +88,19 @@ body {
   box-shadow: rgba(0, 0, 0, 0.17) 0px 12px 8px 1px;
   white-space: nowrap;
 }
+
+.dock.mobile {
+  .app {
+    transform: none !important;
+    transition: none !important;
+
+    img {
+      transform: none !important;
+      transition: none !important;
+    }
+
+    &:hover {
+      transform: none !important;
+    }
+  }
+}
