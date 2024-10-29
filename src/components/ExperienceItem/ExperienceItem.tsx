@@ -33,8 +33,8 @@ function ExperienceItem({
   const companyNameRef = useRef(null)
   const roleRef = useRef(null)
   const datesRef = useRef(null)
-  const descriptionRef = useRef(null)
-  const techBadgesRef = useRef(null)
+  const descriptionRef = useRef<HTMLUListElement>(null)
+  const techBadgesRef = useRef<HTMLDivElement>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -92,14 +92,14 @@ function ExperienceItem({
       )
 
       tl.fromTo(
-        descriptionRef.current.children,
+        descriptionRef.current!.children,
         { opacity: 0, x: -10 },
         { opacity: 1, x: 0, duration: 0.2, stagger: 0.05, ease: 'power3.out' },
         '-=0.1'
       )
 
       tl.fromTo(
-        techBadgesRef.current.children,
+        techBadgesRef.current!.children,
         { opacity: 0, scale: 0.9 },
         {
           opacity: 1,

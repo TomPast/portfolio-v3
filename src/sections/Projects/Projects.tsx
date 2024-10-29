@@ -1,17 +1,40 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './Projects.scss'
 import PartTitle from '../../components/PartTitle/PartTitle'
 import ProjectCard from '../../components/ProjectCard/ProjectCard'
+import imageUrlBuilder from '@sanity/image-url'
 
 gsap.registerPlugin(ScrollTrigger)
+
+import client from '../../client'
+
+interface Project {
+  image: string
+  title: string
+  description: string
+  github: string
+  preview: string
+}
+
+function urlFor(source: string) {
+  return imageUrlBuilder(client).image(source)
+}
 
 function Projects() {
   const sectionRef = useRef(null)
   const textRef = useRef(null)
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
+  const [projects, setProjects] = useState<Project[]>([])
+
+  useEffect(() => {
+    client.fetch(`*[_type == "project"]`).then((projects) => {
+      setProjects(projects)
+      console.log(projects)
+    })
+  }, [])
 
   useEffect(() => {
     const section = sectionRef.current
@@ -64,32 +87,38 @@ function Projects() {
           </button>
         </div>
 
-        <ProjectCard
-          ref={(el) => (cardRefs.current[1] = el)}
-          image={'https://placehold.co/600x300'}
-          title="React Component Library"
-          description="A library of reusable React components"
-          githubLink="https://github.com/your-repo/react-component-library"
-          demoLink="https://your-repo.github.io/react-component-library"
-        />
+        {projects.length >= 1 && (
+          <ProjectCard
+            ref={(el) => (cardRefs.current[1] = el)}
+            image={urlFor(projects[0]?.image).width(600).height(300).url()}
+            title={projects[0]?.title}
+            description={projects[0]?.description}
+            githubLink={projects[0]?.github}
+            demoLink={projects[0]?.preview}
+          />
+        )}
       </div>
       <div className="column right">
-        <ProjectCard
-          ref={(el) => (cardRefs.current[0] = el)}
-          image={'https://placehold.co/600x300'}
-          title="React Component Library"
-          description="A library of reusable React components"
-          githubLink="https://github.com/your-repo/react-component-library"
-          demoLink="https://your-repo.github.io/react-component-library"
-        />
-        <ProjectCard
-          ref={(el) => (cardRefs.current[2] = el)}
-          image={'https://placehold.co/600x300'}
-          title="React Component Library"
-          description="A library of reusable React components"
-          githubLink="https://github.com/your-repo/react-component-library"
-          demoLink="https://your-repo.github.io/react-component-library"
-        />
+        {projects.length >= 2 && (
+          <ProjectCard
+            ref={(el) => (cardRefs.current[0] = el)}
+            image={urlFor(projects[1].image).width(600).height(300).url()}
+            title={projects[1].title}
+            description={projects[1].description}
+            githubLink={projects[1].github}
+            demoLink={projects[1].preview}
+          />
+        )}
+        {projects.length >= 3 && (
+          <ProjectCard
+            ref={(el) => (cardRefs.current[2] = el)}
+            image={urlFor(projects[2].image).width(600).height(300).url()}
+            title={projects[2].title}
+            description={projects[2].description}
+            githubLink={projects[2].github}
+            demoLink={projects[2].preview}
+          />
+        )}
       </div>
     </section>
   )

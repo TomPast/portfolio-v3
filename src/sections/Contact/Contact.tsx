@@ -18,12 +18,12 @@ import resumeLogo from '../../assets/logo/cv.png'
 import instagramLogo from '../../assets/logo/ig-logo.png'
 
 function Contact() {
-  const sectionRef = useRef(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
 
-    const elements = sectionRef.current.children
+    const elements = sectionRef.current!.children
 
     const tl = gsap.timeline({
       scrollTrigger: {
