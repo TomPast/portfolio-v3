@@ -4,10 +4,10 @@
 
   <use xlink:href="#master-line" opacity="0.15"/>
   <text id="mainText" fill="white" className="svg-text" dy="-10%" style="letter-spacing: 2px; font-weight: 200;">
-    <textPath id="masterTextPath" xlink:href="#master-line" startOffset="0%">TOM PAST - FULLSTACK DEVELOPER - AVAILABLE FOR WORK - TOM PAST - FULLSTACK DEVELOPER -  AVAILABLE FOR WORK - </textPath>
+    <textPath id="masterTextPath" xlink:href="#master-line" startOffset="0%">TOM PASTOR - FULLSTACK DEVELOPER - AVAILABLE FOR WORK - TOM PASTOR - FULLSTACK DEVELOPER -  AVAILABLE FOR WORK - </textPath>
   </text>
 
   <text id="mainTextClone" fill="white" className="svg-text" dy="-10%" style="letter-spacing: 2px; font-weight: 200;">
-    <textPath id="masterTextPathClone" xlink:href="#master-line" startOffset="0%">TOM PAST - FULLSTACK DEVELOPER - AVAILABLE FOR WORK - TOM PAST - FULLSTACK DEVELOPER -  AVAILABLE FOR WORK - </textPath>
+    <textPath id="masterTextPathClone" xlink:href="#master-line" startOffset="0%">TOM PASTOR - FULLSTACK DEVELOPER - AVAILABLE FOR WORK - TOM PASTOR - FULLSTACK DEVELOPER -  AVAILABLE FOR WORK - </textPath>
   </text>
 </svg>

@@ -40,8 +40,8 @@ function Main() {
     const handleParallax = () => {
       if (heroRef.current) {
         const scrollPosition = window.scrollY
-        const maxScroll = 500 // Limite maximale de défilement pour l'effet
-        const parallaxEffect = Math.min(scrollPosition, maxScroll) * 0.5 // Réduire la vitesse de l'effet
+        const maxScroll = 500
+        const parallaxEffect = Math.min(scrollPosition, maxScroll) * 0.5
         const opacity = 1 - Math.min(scrollPosition / maxScroll, 1)
 
         gsap.to(heroRef.current.children, {

@@ -21,7 +21,7 @@ function StartCurvedText() {
         ease: 'none',
         duration: 40,
         attr: {
-          startOffset: '135%',
+          startOffset: '140%',
         },
       },
       0
@@ -30,7 +30,7 @@ function StartCurvedText() {
       '#masterTextPathClone',
       {
         attr: {
-          startOffset: '-135%',
+          startOffset: '-140%',
         },
       },
       {
