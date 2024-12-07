@@ -59,7 +59,7 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
                     href={githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ opacity: githubLink ? 1 : 0 }}
+                    style={{ display: githubLink ? 'inline-block' : 'none' }}
                   >
                     <GithubLogo width={32} height={32} />
                   </a>
@@ -67,7 +67,7 @@ const ProjectCard = forwardRef<HTMLDivElement, ProjectCardProps>(
                     href={demoLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={{ opacity: demoLink ? 1 : 0 }}
+                    style={{ display: demoLink ? 'inline-block' : 'none' }}
                   >
                     <YoutubeLogo width={32} height={32} />
                   </a>
