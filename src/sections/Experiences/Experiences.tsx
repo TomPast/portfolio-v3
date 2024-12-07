@@ -57,6 +57,7 @@ function Experiences() {
           <div className="experiences-content">
             <ExperienceItem
               companyLogo={IraiserLogo}
+              companyUrl="https://iraiser.com"
               role="Software Engineer"
               companyName="iRaiser"
               location="Nantes, France"
@@ -71,6 +72,7 @@ function Experiences() {
 
             <ExperienceItem
               companyLogo={SyaLogo}
+              companyUrl="https://www.linkedin.com/company/sya-digital/"
               role="Fullstack Developer"
               companyName="SYA Digital"
               location="Rennes, France"
@@ -97,6 +99,7 @@ function Experiences() {
 
             <ExperienceItem
               companyLogo={SpikeelabsLogo}
+              companyUrl="https://www.spikeelabs.com/"
               role="Fullstack Developer"
               companyName="SpikeeLabs"
               location="Rennes, France"
@@ -130,6 +133,7 @@ function Experiences() {
           <div className="experiences-content">
             <ExperienceItem
               companyLogo={EnsimLogo}
+              companyUrl="https://ensim.univ-lemans.fr/"
               role="IT Engineering Degree"
               companyName="ENSIM (École Nationale Supérieure d'Ingénieurs du Mans)"
               location="Le Mans, France"

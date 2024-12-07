@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 
 function ExperienceItem({
   companyLogo,
+  companyUrl,
   role,
   companyName,
   location,
@@ -16,6 +17,7 @@ function ExperienceItem({
   index,
 }: {
   companyLogo: string
+  companyUrl: string
   role: string
   companyName: string
   location: string
@@ -152,7 +154,9 @@ function ExperienceItem({
   return (
     <div className="experience-item" ref={itemRef} style={{ opacity: 0 }}>
       <div className="left-content">
-        <img src={companyLogo} className="logo-img" ref={logoRef} />
+        <a href={companyUrl} target="_blank" rel="noopener noreferrer">
+          <img src={companyLogo} className="logo-img" ref={logoRef} />
+        </a>
         {!simpleItem && (
           <div
             className={`vertical-line ${isLastItem ? 'fade-out' : ''}`}
@@ -161,7 +165,14 @@ function ExperienceItem({
         )}
       </div>
       <div className="right-content">
-        <h3 ref={companyNameRef}>{companyName}</h3>
+        <a
+          href={companyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          ref={companyNameRef}
+        >
+          {companyName}
+        </a>
         <span className="role" ref={roleRef}>
           {role} <span className="location">{location}</span>
         </span>
