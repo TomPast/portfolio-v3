@@ -30,5 +30,12 @@ export default defineType({
       type: 'array',
       of: [{type: 'string'}],
     }),
+    defineField({
+      name: 'video',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+    }),
   ],
 })

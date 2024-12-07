@@ -13,10 +13,13 @@ import client from '../../client'
 
 interface Project {
   image: string
-  title: string
+  name: string
   description: string
   github: string
   preview: string
+  video: {
+    url: string
+  }
 }
 
 function urlFor(source: string) {
@@ -30,10 +33,21 @@ function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(() => {
-    client.fetch(`*[_type == "project"]`).then((projects) => {
-      setProjects(projects)
-      console.log(projects)
-    })
+    client
+      .fetch(
+        `
+      *[_type == "project"]{
+        ..., // Récupère tous les champs du document
+        video {
+          "url": asset->url
+        }
+      }
+    `
+      )
+      .then((projects) => {
+        setProjects(projects)
+        console.log(projects)
+      })
   }, [])
 
   useEffect(() => {
@@ -56,6 +70,7 @@ function Projects() {
     )
 
     cards.forEach((card, index) => {
+      console.log(card)
       if (card) {
         gsap.fromTo(
           card,
@@ -66,13 +81,13 @@ function Projects() {
             duration: 1,
             scrollTrigger: {
               trigger: section,
-              start: `top ${70 - index * 20}%`,
+              start: `top ${55 - index * 20}%`,
             },
           }
         )
       }
     })
-  }, [])
+  }, [projects])
 
   return (
     <section className="projects" ref={sectionRef}>
@@ -90,11 +105,12 @@ function Projects() {
         {projects.length >= 1 && (
           <ProjectCard
             ref={(el) => (cardRefs.current[1] = el)}
-            image={urlFor(projects[0]?.image).width(600).height(300).url()}
-            title={projects[0]?.title}
+            image={urlFor(projects[0]?.image).url()}
+            name={projects[0]?.name}
             description={projects[0]?.description}
             githubLink={projects[0]?.github}
             demoLink={projects[0]?.preview}
+            videoUrl={projects[0]?.video?.url}
           />
         )}
       </div>
@@ -102,21 +118,23 @@ function Projects() {
         {projects.length >= 2 && (
           <ProjectCard
             ref={(el) => (cardRefs.current[0] = el)}
-            image={urlFor(projects[1].image).width(600).height(300).url()}
-            title={projects[1].title}
+            image={urlFor(projects[1].image).url()}
+            name={projects[1].name}
             description={projects[1].description}
             githubLink={projects[1].github}
             demoLink={projects[1].preview}
+            videoUrl={projects[1].video?.url}
           />
         )}
         {projects.length >= 3 && (
           <ProjectCard
             ref={(el) => (cardRefs.current[2] = el)}
-            image={urlFor(projects[2].image).width(600).height(300).url()}
-            title={projects[2].title}
+            image={urlFor(projects[2].image).url()}
+            name={projects[2].name}
             description={projects[2].description}
             githubLink={projects[2].github}
             demoLink={projects[2].preview}
+            videoUrl={projects[2].video?.url}
           />
         )}
       </div>

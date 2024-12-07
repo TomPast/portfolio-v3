@@ -107,7 +107,7 @@ function AboutMe() {
         target="_blank"
         rel="noreferrer"
       >
-        Voir plus sur mon Instagram
+        See more on my Instagram
         <img src={InstagramIcon} alt="Instagram" className="instagram-icon" />→
       </a>
     </section>

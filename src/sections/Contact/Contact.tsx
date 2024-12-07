@@ -5,10 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './Contact.scss'
 import PartTitle from '../../components/PartTitle/PartTitle'
 
-import { ReactComponent as InstagramIcon } from '../../assets/logo/instagram_white.svg'
-import { ReactComponent as LinkedInIcon } from '../../assets/logo/linkedin-logo.svg'
-import { ReactComponent as GithubIcon } from '../../assets/logo/github.svg'
-import { ReactComponent as CVIcon } from '../../assets/logo/cv.svg'
 import ContactForm from '../../components/ContactForm/ContactForm'
 import DockLinks from '../../components/DockLinks/DockLinks'
 
