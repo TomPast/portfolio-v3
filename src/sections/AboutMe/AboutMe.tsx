@@ -87,7 +87,7 @@ function AboutMe() {
       </PartTitle>
       <div className="about-me-description">
         <p className="description">
-          I am <span className="bold">25</span> and I currently live in{' '}
+          I am <span className="bold">26</span> and I currently live in{' '}
           <span className="bold">Rennes, France</span>. When I&apos;m not
           coding, I enjoy{' '}
           <span className="bold">traveling, photography, sports</span> and
