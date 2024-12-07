@@ -166,8 +166,8 @@ function ExperienceItem({
           {role} <span className="location">{location}</span>
         </span>
         <span className="dates" ref={datesRef}>
-          {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Présent'}{' '}
-          ({calculateDuration(startDate, endDate || new Date())})
+          {formatDate(startDate)} - {endDate ? formatDate(endDate) : 'Now'} (
+          {calculateDuration(startDate, endDate || new Date())})
         </span>
         <ul className="description-list" ref={descriptionRef}>
           {description?.map((item, index) => (

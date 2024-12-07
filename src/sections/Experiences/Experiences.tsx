@@ -3,6 +3,7 @@ import PartTitle from '../../components/PartTitle/PartTitle'
 import './Experiences.scss'
 import SwitchTabs from '../../components/SwitchTabs/SwitchTabs'
 import ExperienceItem from '../../components/ExperienceItem/ExperienceItem'
+import IraiserLogo from '../../assets/logo/iraiser.svg'
 import SyaLogo from '../../assets/logo/sya-digital.svg'
 import SpikeelabsLogo from '../../assets/logo/spikeelabs.svg'
 import EnsimLogo from '../../assets/logo/ensim.svg'
@@ -55,6 +56,20 @@ function Experiences() {
         {activeTab === 'experiences' && (
           <div className="experiences-content">
             <ExperienceItem
+              companyLogo={IraiserLogo}
+              role="Software Engineer"
+              companyName="iRaiser"
+              location="Nantes, France"
+              startDate={new Date('2024-11-01')}
+              description={[
+                'Participation in the development of a SAAS product to help non-profit associations and NGOs raise funds',
+                'Solution customization and development for specific customer requirements',
+              ]}
+              technologies={['PHP', 'Javascript', 'HTML', 'CSS', 'Docker']}
+              index={0}
+            />
+
+            <ExperienceItem
               companyLogo={SyaLogo}
               role="Fullstack Developer"
               companyName="SYA Digital"
@@ -77,7 +92,7 @@ function Experiences() {
                 'MongoDB',
                 'Astro',
               ]}
-              index={0}
+              index={1}
             />
 
             <ExperienceItem
@@ -106,7 +121,7 @@ function Experiences() {
                 'MSSQL',
               ]}
               isLastItem
-              index={1}
+              index={2}
             />
           </div>
         )}
