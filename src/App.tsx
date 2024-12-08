@@ -18,12 +18,16 @@ import Contact from './sections/Contact/Contact'
 import Footer from './sections/Footer/Footer'
 import StartCurvedText from './sections/StartCurvedText/StartCurvedText'
 import Cursor from './components/Cursor/Cursor'
+
+import { SpeedInsights } from '@vercel/speed-insights/react'
+
 gsap.registerPlugin(useGSAP)
 
 function App() {
   return (
     <ReactLenis root>
       <Cursor />
+      <SpeedInsights />
       <div
         className="body"
         style={{
