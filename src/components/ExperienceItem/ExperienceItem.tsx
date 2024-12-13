@@ -170,6 +170,10 @@ function ExperienceItem({
           target="_blank"
           rel="noopener noreferrer"
           ref={companyNameRef}
+          style={{
+            wordBreak: 'break-word',
+            overflowWrap: 'break-word',
+          }}
         >
           {companyName}
         </a>
