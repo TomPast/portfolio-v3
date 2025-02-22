@@ -57,7 +57,7 @@ function Experiences() {
           <div className="experiences-content">
             <ExperienceItem
               companyLogo={IraiserLogo}
-              companyUrl="https://iraiser.com"
+              companyUrl="https://www.iraiser.com"
               role="Software Engineer"
               companyName="iRaiser"
               location="Nantes, France"
@@ -66,7 +66,7 @@ function Experiences() {
                 'Participation in the development of a SAAS product to help non-profit associations and NGOs raise funds',
                 'Solution customization and development for specific customer requirements',
               ]}
-              technologies={['PHP', 'Javascript', 'HTML', 'CSS', 'Docker']}
+              technologies={['Javascript', 'PHP', 'HTML', 'CSS', 'Docker']}
               index={0}
             />
 
