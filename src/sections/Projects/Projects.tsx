@@ -46,7 +46,6 @@ function Projects() {
       )
       .then((projects) => {
         setProjects(projects)
-        console.log(projects)
       })
   }, [])
 
@@ -70,7 +69,6 @@ function Projects() {
     )
 
     cards.forEach((card, index) => {
-      console.log(card)
       if (card) {
         gsap.fromTo(
           card,
